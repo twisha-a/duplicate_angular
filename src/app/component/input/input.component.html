@@ -1,0 +1,42 @@
+<html>
+
+  <h1 >Input the file<br/></h1>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-grp">
+      <input type="file"
+             [(ngModel)] = employee
+             accept=".xls, .csv, .xlsx"
+             onchange="console.log(event.target.files)"
+      />
+      <b>- Upload the provider's CSV file</b><br/>
+      <button type="submit">Submit</button>
+       <br/><br/><br/><br/>
+    </div>
+  </form>
+
+</html>
+
+
+
+
+
+<!--  </form>-->
+<!--  <form>-->
+<!--    <input ngModel-->
+<!--           type="file"-->
+<!--           #FileInput-->
+<!--           accept=".xls, .csv, .xlsx"-->
+<!--           (change)="onFileInputChanged($event)"/>-->
+<!--&lt;!&ndash;           onchange="console.log(event.target.files)"&ndash;&gt;-->
+<!--&lt;!&ndash;    (ngSubmit)="onSubmit(usersFile.value)"&ndash;&gt;-->
+<!--    <b>- Upload the provider's CSV file</b><br/>-->
+<!--    <button (buttonClick)="FileInput.click()"></button>-->
+<!--  </form>-->
+
+
+
+<!--<form (ngSubmit)="onSubmit()">-->
+<!--  <input type="file"-->
+<!--         class="file-upload"-->
+<!--         onchange="console.log(event.target.files)">-->
+<!--</form>-->
