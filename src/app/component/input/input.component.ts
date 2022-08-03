@@ -10,6 +10,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent implements OnInit {
+  myData : any
+  formatted : any
+
   employee: Employee = new Employee();
   constructor(private fileInputService: FileInputService,
               private router: Router) { }
@@ -20,6 +23,9 @@ export class InputComponent implements OnInit {
   saveInput(){this.fileInputService.FileInput(this.employee).subscribe(
     data =>{
       console.log(data);
+      this.myData = data;
+      this.formatted=JSON.stringify(this.myData)
+
       this.goToEmployeeList();
     },
     error => console.log(error));
