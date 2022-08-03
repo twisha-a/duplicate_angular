@@ -20,14 +20,15 @@
        <br/><br/><br/><br/>
     </div>
   </form>
-
+  <h1>Inputted Records</h1>
 <table border="1">
     <thead>
+      <th>InputID</th>
       <th>FirstName</th>
       <th>MiddleName</th>
       <th>LastName</th>
       <th>NationalProviderIdentifier</th>
-      <th>SubSpeciality</th>
+<!--      <th>SubSpeciality</th>-->
       <th>Specialty</th>
       <th>PrimaryPhone</th>
       <th>PrimaryFax</th>
@@ -38,12 +39,13 @@
       <th>ZipCode</th>
     </thead>
 
-      <tr *ngFor = "let item of myData">
+      <tr *ngFor = "let item of myData?.Input">
+        <td>{{item.InputID}}</td>
         <td>{{item.FirstName}}</td>
         <td>{{item.MiddleName}}</td>
         <td>{{item.LastName}}</td>
         <td>{{item.NationalProviderIdentifier}}</td>
-        <td>{{item.SubSpeciality}}</td>
+<!--        <td>{{item.SubSpeciality}}</td>-->
         <td>{{item.Specialty}}</td>
         <td>{{item.PrimaryPhone}}</td>
         <td>{{item.PrimaryFax}}</td>
@@ -55,7 +57,44 @@
       </tr>
 
   </table>
-<div>{{output}} </div>
+<h1>Matching Records</h1>
+<table border="1">
+    <thead>
+      <th>InputID</th>
+      <th>FirstName</th>
+      <th>MiddleName</th>
+      <th>LastName</th>
+      <th>NationalProviderIdentifier</th>
+<!--      <th>SubSpeciality</th>-->
+      <th>Specialty</th>
+      <th>PrimaryPhone</th>
+      <th>PrimaryFax</th>
+      <th>AddressLine1</th>
+      <th>AddressLine2</th>
+      <th>City</th>
+      <th>State</th>
+      <th>ZipCode</th>
+    </thead>
+
+      <tr *ngFor = "let item of myData?.Output">
+        <td>{{item.InputID}}</td>
+        <td>{{item.FirstName}}</td>
+        <td>{{item.MiddleName}}</td>
+        <td>{{item.LastName}}</td>
+        <td>{{item.NationalProviderIdentifier}}</td>
+<!--        <td>{{item.SubSpeciality}}</td>-->
+        <td>{{item.Specialty}}</td>
+        <td>{{item.PrimaryPhone}}</td>
+        <td>{{item.PrimaryFax}}</td>
+        <td>{{item.AddressLine1}}</td>
+        <td>{{item.AddressLine2}}</td>
+        <td>{{item.City}}</td>
+        <td>{{item.State}}</td>
+        <td>{{item.ZipCode}}</td>
+      </tr>
+
+  </table>
+
 </html>
 
 

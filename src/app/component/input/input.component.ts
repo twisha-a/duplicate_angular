@@ -31,7 +31,7 @@ export class InputComponent implements OnInit {
       this.myData = data;
       this.formatted=JSON.stringify(this.myData)
 
-      this.goToEmployeeList();
+//       this.goToEmployeeList();
     },
     error => console.log(error));
   }
