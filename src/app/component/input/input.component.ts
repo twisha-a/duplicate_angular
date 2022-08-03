@@ -3,24 +3,29 @@ import { HttpClient } from '@angular/common/http';
 import { Employee } from 'src/app/data'
 import { FileInputService } from 'src/app/service/file-input.service'
 import { Router } from '@angular/router';
-
+import {Papa} from 'ngx-papaparse'
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.css']
 })
 export class InputComponent implements OnInit {
+  header : any
   myData : any
+  new : any
+  output:any
   formatted : any
-
-  employee: Employee = new Employee();
-  constructor(private fileInputService: FileInputService,
+   file:any;
+  fileChanged(e: any) {
+    this.file = e.target.files[0];
+  }
+  constructor(private papa: Papa,
+              private fileInputService: FileInputService,
               private router: Router) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {  }
 
-  saveInput(){this.fileInputService.FileInput(this.employee).subscribe(
+  saveInput(x:any){this.fileInputService.FileInput(x).subscribe(
     data =>{
       console.log(data);
       this.myData = data;
@@ -35,15 +40,28 @@ export class InputComponent implements OnInit {
     this.router.navigate(['/employees']);
   }
 
+
   onSubmit(){
-    console.log(this.employee)
-    this.saveInput();
+
+    let fileReader = new FileReader();
+    fileReader.onload = (e) => {
+      console.log(fileReader.result);
+    }
+    this.new= fileReader.readAsText(this.file);
+    this.papa.parse(this.file,{complete: (result) => {console.log('Parsed: ', result);
+                                                        this.header=result.data.splice(0,1)[0];
+                                                        this.output=result.data}})
+//     this.output=this.papa.parse(this.file)
+   // Print file contents
+
+//     const reader = new filereader();
+
+    this.saveInput(this.output);
   }
 
 }
-// display_input(){
-//
-// }
+
+
 
 
 

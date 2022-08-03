@@ -1,19 +1,26 @@
 <html>
 
   <h1 >Input the file<br/></h1>
+  <div class="Block">
+  <label id="lbl"></label>
+  <input type='file' (change)="fileChanged($event)">
+
+</div>
   <form (ngSubmit)="onSubmit()">
     <div class="form-grp">
-      <input type="file"
-             [(ngModel)] = employee
-             accept=".xls, .csv, .xlsx"
-             onchange="console.log(event.target.files)"
-      />
+<!--      <input type="file"-->
+<!--             [(ngModel)] = employee-->
+<!--             accept=".xls, .csv, .xlsx"-->
+<!--             onchange="console.log(event.target.files)"-->
+<!--      />-->
+
+
       <b>- Upload the provider's CSV file</b><br/>
       <button type="submit">Submit</button>
        <br/><br/><br/><br/>
     </div>
   </form>
- 
+
 <table border="1">
     <thead>
       <th>FirstName</th>
@@ -48,6 +55,7 @@
       </tr>
 
   </table>
+<div>{{output}} </div>
 </html>
 
 
