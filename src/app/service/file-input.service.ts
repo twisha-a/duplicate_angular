@@ -15,7 +15,6 @@ export class FileInputService {
   getProvidersList():Observable<Employee[]>{
     return this.httpClient.get<Employee[]>(`${this.baseUrl1}`);
   }
-  //sending input to server but right now in csv format; make changes for json format
   FileInput(file:any): Observable<Object>{
     return this.httpClient.post(`${this.baseUrl1}`, file);
   }

@@ -1,100 +1,110 @@
 <html>
-
-  <h1 >Input the file<br/></h1>
-  <div class="Block">
-  <label id="lbl"></label>
-  <input type='file' (change)="fileChanged($event)">
-
-</div>
-  <form (ngSubmit)="onSubmit()">
-    <div class="form-grp">
-<!--      <input type="file"-->
-<!--             [(ngModel)] = employee-->
-<!--             accept=".xls, .csv, .xlsx"-->
-<!--             onchange="console.log(event.target.files)"-->
-<!--      />-->
-
-
-      <b>- Upload the provider's CSV file</b><br/>
-      <button type="submit">Submit</button>
-       <br/><br/><br/><br/>
+  <body>
+    <hr>
+    <div><h1>Duplicate Provider</h1></div>
+    <hr>
+    <br/>
+    <h2 >Input the file<br/></h2>
+    <div class="card">
+      <div class="card-header">
+        <b>Upload the provider's CSV file</b>
+      </div>
+      <div class="card-body">
+        <input type='file'  (change)="fileChanged($event)">
+      </div>
     </div>
-  </form>
-  <h1>Inputted Records</h1>
-<table border="1">
-    <thead>
-      <th>InputID</th>
-      <th>FirstName</th>
-      <th>MiddleName</th>
-      <th>LastName</th>
-      <th>NationalProviderIdentifier</th>
-<!--      <th>SubSpeciality</th>-->
-      <th>Specialty</th>
-      <th>PrimaryPhone</th>
-      <th>PrimaryFax</th>
-      <th>AddressLine1</th>
-      <th>AddressLine2</th>
-      <th>City</th>
-      <th>State</th>
-      <th>ZipCode</th>
-    </thead>
+<!--    <div class="Block">-->
+<!--      <label id="lbl"></label>-->
 
-      <tr *ngFor = "let item of myData?.Input">
-        <td>{{item.InputID}}</td>
-        <td>{{item.FirstName}}</td>
-        <td>{{item.MiddleName}}</td>
-        <td>{{item.LastName}}</td>
-        <td>{{item.NationalProviderIdentifier}}</td>
-<!--        <td>{{item.SubSpeciality}}</td>-->
-        <td>{{item.Specialty}}</td>
-        <td>{{item.PrimaryPhone}}</td>
-        <td>{{item.PrimaryFax}}</td>
-        <td>{{item.AddressLine1}}</td>
-        <td>{{item.AddressLine2}}</td>
-        <td>{{item.City}}</td>
-        <td>{{item.State}}</td>
-        <td>{{item.ZipCode}}</td>
-      </tr>
+<!--    </div>-->
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-grp">
+  <!--      <input type="file"-->
+  <!--             [(ngModel)] = employee-->
+  <!--             accept=".xls, .csv, .xlsx"-->
+  <!--             onchange="console.log(event.target.files)"-->
+  <!--      />-->
+        <br/>
+        <button type="submit"><b>Submit</b></button>
+         <br/><br/><br/><br/>
+      </div>
+    </form>
 
-  </table>
-<h1>Matching Records</h1>
-<table border="1">
-    <thead>
-      <th>InputID</th>
-      <th>FirstName</th>
-      <th>MiddleName</th>
-      <th>LastName</th>
-      <th>NationalProviderIdentifier</th>
-<!--      <th>SubSpeciality</th>-->
-      <th>Specialty</th>
-      <th>PrimaryPhone</th>
-      <th>PrimaryFax</th>
-      <th>AddressLine1</th>
-      <th>AddressLine2</th>
-      <th>City</th>
-      <th>State</th>
-      <th>ZipCode</th>
-    </thead>
+    <h2>Displaying the Input Records</h2>
+    <table border="1">
+        <thead>
+          <th>Input ID</th>
+          <th>First Name</th>
+          <th>Middle Name</th>
+          <th>Last Name</th>
+          <th>National_Provider_Identifier</th>
+    <!--      <th>SubSpeciality</th>-->
+          <th>Specialty</th>
+          <th>Primary Phone</th>
+          <th>Primary Fax</th>
+          <th>Address Line1</th>
+          <th>Address Line2</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zip Code</th>
+        </thead>
 
-      <tr *ngFor = "let item of myData?.Output">
-        <td>{{item.InputID}}</td>
-        <td>{{item.FirstName}}</td>
-        <td>{{item.MiddleName}}</td>
-        <td>{{item.LastName}}</td>
-        <td>{{item.NationalProviderIdentifier}}</td>
-<!--        <td>{{item.SubSpeciality}}</td>-->
-        <td>{{item.Specialty}}</td>
-        <td>{{item.PrimaryPhone}}</td>
-        <td>{{item.PrimaryFax}}</td>
-        <td>{{item.AddressLine1}}</td>
-        <td>{{item.AddressLine2}}</td>
-        <td>{{item.City}}</td>
-        <td>{{item.State}}</td>
-        <td>{{item.ZipCode}}</td>
-      </tr>
+          <tr *ngFor = "let item of myData?.Input">
+            <td>{{item.InputID}}</td>
+            <td>{{item.FirstName}}</td>
+            <td>{{item.MiddleName}}</td>
+            <td>{{item.LastName}}</td>
+            <td>{{item.NationalProviderIdentifier}}</td>
+    <!--        <td>{{item.SubSpeciality}}</td>-->
+            <td>{{item.Specialty}}</td>
+            <td>{{item.PrimaryPhone}}</td>
+            <td>{{item.PrimaryFax}}</td>
+            <td>{{item.AddressLine1}}</td>
+            <td>{{item.AddressLine2}}</td>
+            <td>{{item.City}}</td>
+            <td>{{item.State}}</td>
+            <td>{{item.ZipCode}}</td>
+          </tr>
+    </table>
+    <br>
+    <h2>Matching Records</h2>
+    <table border="1">
+        <thead>
+          <th>Input ID</th>
+          <th>First Name</th>
+          <th>Middle Name</th>
+          <th>Last Name</th>
+          <th>National_Provider_Identifier</th>
+    <!--      <th>SubSpeciality</th>-->
+          <th>Specialty</th>
+          <th>Primary Phone</th>
+          <th>Primary Fax</th>
+          <th>Address Line1</th>
+          <th>Address Line2</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zip Code</th>
+        </thead>
 
-  </table>
+          <tr *ngFor = "let item of myData?.Output">
+            <td>{{item.InputID}}</td>
+            <td>{{item.FirstName}}</td>
+            <td>{{item.MiddleName}}</td>
+            <td>{{item.LastName}}</td>
+            <td>{{item.NationalProviderIdentifier}}</td>
+    <!--        <td>{{item.SubSpeciality}}</td>-->
+            <td>{{item.Specialty}}</td>
+            <td>{{item.PrimaryPhone}}</td>
+            <td>{{item.PrimaryFax}}</td>
+            <td>{{item.AddressLine1}}</td>
+            <td>{{item.AddressLine2}}</td>
+            <td>{{item.City}}</td>
+            <td>{{item.State}}</td>
+            <td>{{item.ZipCode}}</td>
+          </tr>
 
+      </table>
+  </body>
 </html>
 
 

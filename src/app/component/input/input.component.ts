@@ -36,9 +36,7 @@ export class InputComponent implements OnInit {
     error => console.log(error));
   }
 
-  goToEmployeeList(){
-    this.router.navigate(['/employees']);
-  }
+
 
 
   onSubmit(){
