@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { InputComponent } from './component/input/input.component';
 import { OutputComponent } from './component/output/output.component';
 import { DisplayInputComponent } from './component/display-input/display-input.component';
+import { SpinnerComponent } from 'src/app/component/spinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InputComponent,
     OutputComponent,
-    DisplayInputComponent
+    DisplayInputComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
